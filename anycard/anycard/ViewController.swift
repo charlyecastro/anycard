@@ -42,6 +42,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if let imageAnchor = anchor as? ARImageAnchor {
             let size = imageAnchor.referenceImage.physicalSize
             let plane = SCNPlane(width: size.width, height: size.height)
+            
+            plane.firstMaterial?.diffuse.contents = UIImage(named: "AceSpades")
             plane.cornerRadius = 0.005
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi / 2
