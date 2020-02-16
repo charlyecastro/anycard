@@ -14,6 +14,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    @IBAction func handleSnap(_ sender: UIButton) {
+        UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.delegate = self
