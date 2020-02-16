@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    var modelController: ModelController!
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var rankPicker: UIPickerView!
@@ -28,16 +29,16 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         self.suitPicker.delegate = self as UIPickerViewDelegate
         self.suitPicker.dataSource = self as UIPickerViewDataSource
-        
-       
     }
     
     @IBAction func handleSave(_ sender: UIButton) {
         let imageName = rankLabel.text! + suitLabel.text!.prefix(1)
-        print(imageName)
+        let newCard = PlayingCard(rank: rankLabel.text!, suit: suitLabel.text!, image: imageName)
+        modelController.card = newCard
         cardImage.image = UIImage(named: imageName)
         
     }
+    
     @IBAction func closeSettings(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

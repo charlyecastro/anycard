@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56252D0E23FA04EA00F9474B /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56252D0D23FA04EA00F9474B /* PlayingCard.swift */; };
+		56252D1023FA054100F9474B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56252D0F23FA054100F9474B /* ModelController.swift */; };
 		5662756F23F897EF00821833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5662756E23F897EF00821833 /* AppDelegate.swift */; };
 		5662757123F897EF00821833 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5662757023F897EF00821833 /* art.scnassets */; };
 		5662757323F897EF00821833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5662757223F897EF00821833 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56252D0D23FA04EA00F9474B /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		56252D0F23FA054100F9474B /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		5662756B23F897EF00821833 /* anycard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anycard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5662756E23F897EF00821833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5662757023F897EF00821833 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		5662756223F897EF00821833 = {
 			isa = PBXGroup;
 			children = (
+				56252D0F23FA054100F9474B /* ModelController.swift */,
+				56252D0D23FA04EA00F9474B /* PlayingCard.swift */,
 				5662756D23F897EF00821833 /* anycard */,
 				5662756C23F897EF00821833 /* Products */,
 				56C056C923F9156900F41FFC /* Deck.xcassets */,
@@ -155,7 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5662757323F897EF00821833 /* ViewController.swift in Sources */,
+				56252D1023FA054100F9474B /* ModelController.swift in Sources */,
 				5662756F23F897EF00821833 /* AppDelegate.swift in Sources */,
+				56252D0E23FA04EA00F9474B /* PlayingCard.swift in Sources */,
 				56C056CE23F91E5200F41FFC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

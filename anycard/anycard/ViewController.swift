@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var modelController: ModelController!
     
     @IBAction func handleSnap(_ sender: UIButton) {
         UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
@@ -33,7 +34,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         }
         sceneView.session.run(configuration)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,14 +41,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let settingsViewController = segue.destination as? SettingsViewController {
+            settingsViewController.modelController = modelController
+        }
+    }
+    
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
+        let card = modelController.card
         
         if let imageAnchor = anchor as? ARImageAnchor {
             let size = imageAnchor.referenceImage.physicalSize
             let plane = SCNPlane(width: size.width, height: size.height)
             
-            plane.firstMaterial?.diffuse.contents = UIImage(named: "AS")
+            plane.firstMaterial?.diffuse.contents = UIImage(named: card.image)
             plane.cornerRadius = 0.005
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi / 2
