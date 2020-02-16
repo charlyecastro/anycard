@@ -64,7 +64,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Db7-kR-EDb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="bRR-2J-v3C"/>
+                                    <constraint firstAttribute="height" constant="44" id="w8z-Hl-ae8"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Settings" id="IrJ-Si-Mdp">
@@ -82,36 +82,49 @@
                                 </items>
                             </navigationBar>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azX-JN-pDe" userLabel="Rank Picker">
-                                <rect key="frame" x="0.0" y="440" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="401" width="414" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="WkQ-eR-M2C"/>
+                                    <constraint firstAttribute="height" constant="120" id="bgS-rz-sw1"/>
                                 </constraints>
                             </pickerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="AS" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-t2-SuQ">
-                                <rect key="frame" x="138" y="159" width="139" height="209"/>
+                                <rect key="frame" x="138" y="121" width="139" height="209"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECTED CARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2To-iy-NNj">
-                                <rect key="frame" x="140.5" y="114" width="133" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Aii-4M-yab"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RANK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVX-zg-9oJ">
-                                <rect key="frame" x="20" y="410.5" width="45" height="21"/>
+                                <rect key="frame" x="20" y="372" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-UV-Xgh" userLabel="Suit Picker">
-                                <rect key="frame" x="0.0" y="659" width="414" height="162"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80M-dV-6Dn" userLabel="Suit Label">
-                                <rect key="frame" x="23" y="610" width="42" height="21"/>
+                                <rect key="frame" x="0.0" y="558" width="414" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="TaB-vQ-2a9"/>
+                                    <constraint firstAttribute="height" constant="120" id="Ufc-Z1-8y3"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80M-dV-6Dn" userLabel="Suit Label">
+                                <rect key="frame" x="20" y="529" width="38" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OyY-xT-tUe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwt-Hg-4Mw" userLabel="Save Button">
+                                <rect key="frame" x="190" y="749" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1hb-aU-ivV"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="handleSave:" destination="xCM-OL-3tO" eventType="touchUpInside" id="3j2-Jg-Gse"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SELECTED CARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2To-iy-NNj">
+                                <rect key="frame" x="112" y="92" width="190" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WQF-4u-WIy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -120,30 +133,33 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Db7-kR-EDb" firstAttribute="centerX" secondItem="2To-iy-NNj" secondAttribute="centerX" id="1Rv-Pl-Kgi"/>
-                            <constraint firstItem="Db7-kR-EDb" firstAttribute="leading" secondItem="h5t-q6-fli" secondAttribute="leading" id="3Ks-fu-DON"/>
-                            <constraint firstItem="RVX-zg-9oJ" firstAttribute="centerY" secondItem="x4B-kV-wuA" secondAttribute="centerY" id="6v4-sI-Opj"/>
-                            <constraint firstItem="kq0-t2-SuQ" firstAttribute="leading" secondItem="h5t-q6-fli" secondAttribute="leading" constant="138" id="AXJ-mH-U7c"/>
-                            <constraint firstItem="Db7-kR-EDb" firstAttribute="top" secondItem="h5t-q6-fli" secondAttribute="top" id="BOw-aD-0Ae"/>
-                            <constraint firstItem="azX-JN-pDe" firstAttribute="trailing" secondItem="OSe-UV-Xgh" secondAttribute="trailing" id="GFr-RZ-mW9"/>
-                            <constraint firstItem="Db7-kR-EDb" firstAttribute="centerX" secondItem="x4B-kV-wuA" secondAttribute="centerX" id="IwO-g6-COM"/>
-                            <constraint firstItem="Db7-kR-EDb" firstAttribute="trailing" secondItem="azX-JN-pDe" secondAttribute="trailing" id="M2m-jv-LxS"/>
-                            <constraint firstItem="azX-JN-pDe" firstAttribute="top" secondItem="RVX-zg-9oJ" secondAttribute="bottom" constant="8.5" id="Qt9-yc-BOy"/>
-                            <constraint firstItem="2To-iy-NNj" firstAttribute="top" secondItem="Db7-kR-EDb" secondAttribute="bottom" constant="70" id="WSe-tE-Lto"/>
-                            <constraint firstItem="RVX-zg-9oJ" firstAttribute="leading" secondItem="x4B-kV-wuA" secondAttribute="leadingMargin" id="Yeg-yh-nmD"/>
-                            <constraint firstItem="OSe-UV-Xgh" firstAttribute="top" secondItem="80M-dV-6Dn" secondAttribute="bottom" constant="28" id="aSG-3X-VWo"/>
-                            <constraint firstItem="kq0-t2-SuQ" firstAttribute="top" secondItem="2To-iy-NNj" secondAttribute="bottom" constant="24" id="ajU-eb-wYr"/>
-                            <constraint firstItem="azX-JN-pDe" firstAttribute="leading" secondItem="OSe-UV-Xgh" secondAttribute="leading" id="gVs-fe-wzt"/>
-                            <constraint firstItem="2To-iy-NNj" firstAttribute="centerX" secondItem="kq0-t2-SuQ" secondAttribute="centerX" id="h2i-Hc-siI"/>
-                            <constraint firstItem="80M-dV-6Dn" firstAttribute="top" secondItem="azX-JN-pDe" secondAttribute="bottom" constant="8" id="pl7-A2-pyP"/>
-                            <constraint firstItem="azX-JN-pDe" firstAttribute="top" secondItem="kq0-t2-SuQ" secondAttribute="bottom" constant="72" id="qY7-D2-bK8"/>
-                            <constraint firstItem="Db7-kR-EDb" firstAttribute="leading" secondItem="azX-JN-pDe" secondAttribute="leading" id="u8L-za-ADq"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="OSe-UV-Xgh" secondAttribute="bottom" constant="-13" id="uxF-O5-1cT"/>
-                            <constraint firstItem="RVX-zg-9oJ" firstAttribute="trailing" secondItem="80M-dV-6Dn" secondAttribute="trailing" id="xFk-gz-0ab"/>
+                            <constraint firstItem="azX-JN-pDe" firstAttribute="trailing" secondItem="OSe-UV-Xgh" secondAttribute="trailing" id="23k-6p-h31"/>
+                            <constraint firstItem="azX-JN-pDe" firstAttribute="top" secondItem="kq0-t2-SuQ" secondAttribute="bottom" constant="71" id="4dE-7N-TbA"/>
+                            <constraint firstItem="OSe-UV-Xgh" firstAttribute="centerX" secondItem="rwt-Hg-4Mw" secondAttribute="centerX" id="4rF-Yf-u9v"/>
+                            <constraint firstItem="Db7-kR-EDb" firstAttribute="leading" secondItem="azX-JN-pDe" secondAttribute="leading" id="602-1B-i5B"/>
+                            <constraint firstItem="2To-iy-NNj" firstAttribute="centerX" secondItem="kq0-t2-SuQ" secondAttribute="centerX" id="9pc-Ir-GP4"/>
+                            <constraint firstItem="OSe-UV-Xgh" firstAttribute="top" secondItem="80M-dV-6Dn" secondAttribute="bottom" constant="8" id="F0T-Vz-99t"/>
+                            <constraint firstItem="2To-iy-NNj" firstAttribute="leading" secondItem="h5t-q6-fli" secondAttribute="leading" constant="141" id="GAb-Jk-F8l"/>
+                            <constraint firstItem="80M-dV-6Dn" firstAttribute="top" secondItem="azX-JN-pDe" secondAttribute="bottom" constant="8" id="JQJ-uh-Tcb"/>
+                            <constraint firstItem="rwt-Hg-4Mw" firstAttribute="top" secondItem="OSe-UV-Xgh" secondAttribute="bottom" constant="71" id="Lal-0y-mZ0"/>
+                            <constraint firstItem="RVX-zg-9oJ" firstAttribute="leading" secondItem="x4B-kV-wuA" secondAttribute="leadingMargin" id="Vz2-A1-xbH"/>
+                            <constraint firstItem="Db7-kR-EDb" firstAttribute="trailing" secondItem="azX-JN-pDe" secondAttribute="trailing" id="X6O-Bc-CZF"/>
+                            <constraint firstItem="kq0-t2-SuQ" firstAttribute="leading" secondItem="h5t-q6-fli" secondAttribute="leading" constant="138" id="YkP-0W-DGK"/>
+                            <constraint firstItem="Db7-kR-EDb" firstAttribute="leading" secondItem="h5t-q6-fli" secondAttribute="leading" id="gVw-4a-mJd"/>
+                            <constraint firstItem="Db7-kR-EDb" firstAttribute="centerX" secondItem="2To-iy-NNj" secondAttribute="centerX" id="gpT-uZ-4LT"/>
+                            <constraint firstItem="h5t-q6-fli" firstAttribute="bottom" secondItem="rwt-Hg-4Mw" secondAttribute="bottom" constant="29" id="hBD-65-nAW"/>
+                            <constraint firstItem="kq0-t2-SuQ" firstAttribute="top" secondItem="2To-iy-NNj" secondAttribute="bottom" constant="8" id="ifo-HH-Gbc"/>
+                            <constraint firstItem="Db7-kR-EDb" firstAttribute="centerX" secondItem="x4B-kV-wuA" secondAttribute="centerX" id="jMG-TA-75x"/>
+                            <constraint firstItem="Db7-kR-EDb" firstAttribute="top" secondItem="h5t-q6-fli" secondAttribute="top" id="o3W-kw-rCX"/>
+                            <constraint firstItem="azX-JN-pDe" firstAttribute="leading" secondItem="OSe-UV-Xgh" secondAttribute="leading" id="sHp-pj-1Pi"/>
+                            <constraint firstItem="RVX-zg-9oJ" firstAttribute="leading" secondItem="80M-dV-6Dn" secondAttribute="leading" id="sNX-wM-WZj"/>
+                            <constraint firstItem="azX-JN-pDe" firstAttribute="top" secondItem="RVX-zg-9oJ" secondAttribute="bottom" constant="8" id="sjb-Lh-k7i"/>
+                            <constraint firstItem="2To-iy-NNj" firstAttribute="top" secondItem="Db7-kR-EDb" secondAttribute="bottom" constant="48" id="zLc-Td-FFN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h5t-q6-fli"/>
                     </view>
                     <connections>
+                        <outlet property="cardImage" destination="kq0-t2-SuQ" id="MNc-hC-v0j"/>
                         <outlet property="rankLabel" destination="RVX-zg-9oJ" id="zgk-ip-J0m"/>
                         <outlet property="rankPicker" destination="azX-JN-pDe" id="toZ-oG-VH7"/>
                         <outlet property="suitLabel" destination="80M-dV-6Dn" id="NkR-Uo-Imm"/>
