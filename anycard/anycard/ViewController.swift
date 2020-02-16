@@ -30,8 +30,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if let trackingImages = ARReferenceImage.referenceImages(inGroupNamed: "Card Deck", bundle: Bundle.main) {
             configuration.trackingImages = trackingImages
             configuration.maximumNumberOfTrackedImages = 2
+
         }
         sceneView.session.run(configuration)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,7 +48,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let size = imageAnchor.referenceImage.physicalSize
             let plane = SCNPlane(width: size.width, height: size.height)
             
-            plane.firstMaterial?.diffuse.contents = UIImage(named: "AceSpades")
+            plane.firstMaterial?.diffuse.contents = UIImage(named: "AS")
             plane.cornerRadius = 0.005
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi / 2
