@@ -12,7 +12,6 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate, UpdateCardDelegate {
 
-    var imageName = "AS"
     @IBOutlet var sceneView: ARSCNView!
     var modelController: ModelController!
     var card: PlayingCard!
@@ -20,14 +19,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UpdateCardDelegate {
     
     @IBAction func handleSnap(_ sender: UIButton) {
         UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
-        print(card.image)
-        
     }
     
     func updateCard(cardImage: String) {
-        print(cardImage)
         self.plane.firstMaterial?.diffuse.contents = UIImage(named: cardImage)
-        print("WE ARE HERE! WE MADE IT!!")
     }
     
     override func viewDidLoad() {
@@ -35,10 +30,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UpdateCardDelegate {
         sceneView.delegate = self
         sceneView.autoenablesDefaultLighting = true
         card = modelController.card
-        plane = SCNPlane(width: 2.5, height: 3.5)
-
-        print("viewDidLoad")
-        
+        plane = SCNPlane(width: 0, height: 0)
     }
     
     @objc func advance() {
@@ -56,21 +48,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, UpdateCardDelegate {
 
         }
         sceneView.session.run(configuration)
-        print("viewWillAppear")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
-        print("viewWillDisappear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,15 +69,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UpdateCardDelegate {
             let size = imageAnchor.referenceImage.physicalSize
             plane = SCNPlane(width: size.width, height: size.height)
             card = modelController.card
-            
             plane.firstMaterial?.diffuse.contents = UIImage(named: card.image)
-            print(card.image)
             plane.cornerRadius = 0.005
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi / 2
             node.addChildNode(planeNode)
         }
-        
         return node
     }
 

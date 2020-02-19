@@ -9,5 +9,5 @@
 import Foundation
 
 class ModelController {
-    var card = PlayingCard(rank: "A", suit: "Spades", image: "AS")
+    var card = PlayingCard(rank: "A", suit: "Spade", image: "AS")
 }

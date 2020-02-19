@@ -29,6 +29,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        rankLabel.text = modelController.card.rank
+        suitLabel.text = modelController.card.suit
         
         cardImage.image = UIImage(named: modelController.card.image)
         self.rankPicker.delegate = self as UIPickerViewDelegate
