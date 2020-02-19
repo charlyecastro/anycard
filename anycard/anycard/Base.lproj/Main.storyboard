@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="settings.png"/>
                                 <connections>
-                                    <segue destination="xCM-OL-3tO" kind="presentation" id="ApI-gc-cPI"/>
+                                    <segue destination="xCM-OL-3tO" kind="show" identifier="currentCard" id="ApI-gc-cPI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -158,6 +158,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h5t-q6-fli"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QwY-t0-kzf"/>
                     <connections>
                         <outlet property="cardImage" destination="kq0-t2-SuQ" id="MNc-hC-v0j"/>
                         <outlet property="rankLabel" destination="RVX-zg-9oJ" id="zgk-ip-J0m"/>

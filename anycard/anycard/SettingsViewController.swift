@@ -8,8 +8,14 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+protocol UpdateCardDelegate {
+   func updateCard(cardImage: String)
+}
 
+class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var delegate: UpdateCardDelegate? = nil
+    var imageName = ""
     var modelController: ModelController!
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var rankLabel: UILabel!
@@ -24,6 +30,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cardImage.image = UIImage(named: modelController.card.image)
         self.rankPicker.delegate = self as UIPickerViewDelegate
         self.rankPicker.dataSource = self as UIPickerViewDataSource
         
@@ -31,12 +38,17 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.suitPicker.dataSource = self as UIPickerViewDataSource
     }
     
-    @IBAction func handleSave(_ sender: UIButton) {
-        let imageName = rankLabel.text! + suitLabel.text!.prefix(1)
+    func updateCardImage() {
+        self.imageName = rankLabel.text! + suitLabel.text!.prefix(1)
         let newCard = PlayingCard(rank: rankLabel.text!, suit: suitLabel.text!, image: imageName)
         modelController.card = newCard
-        cardImage.image = UIImage(named: imageName)
-        
+        cardImage.image = UIImage(named: modelController.card.image)
+    }
+    
+    @IBAction func handleSave(_ sender: UIButton) {
+        updateCardImage()
+        self.delegate?.updateCard(cardImage: self.imageName)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func closeSettings(_ sender: Any) {
@@ -69,8 +81,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         } else {
             suitLabel.text = suitList[row]
         }
+        updateCardImage()
     }
 }
+
 
 
     
