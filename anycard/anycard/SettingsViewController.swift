@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var rankPicker: UIPickerView!
-    private let rankList = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"]
+    private let rankList = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
         
     @IBOutlet weak var suitLabel: UILabel!
