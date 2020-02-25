@@ -12,11 +12,11 @@ iOS application that enhances magic tricks by using AR to manipulate playing car
 
 ### Scan Back of card
 <img src="./assets/arCamera.gif" alt="AR Camera"
-	title="A cute kitten" width="150" height="300" />
+	title="A cute kitten" width="250" height="500" />
 
 ### Change Card Settings
 <img src="./assets/settings.gif" alt="Settings Screen"
-	title="A cute kitten" width="150" height="300" />
+	title="A cute kitten" width="250" height="500" />
 
 
 ## WHAT
