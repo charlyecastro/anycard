@@ -8,6 +8,17 @@ iOS application that enhances magic tricks by using AR to manipulate playing car
 - Xcode
 - iOS
 
+## USE
+
+### Scan Back of card
+<img src="./assets/arCamera.gif" alt="AR Camera"
+	title="A cute kitten" width="150" height="300" />
+
+### Change Card Settings
+<img src="./assets/settings.gif" alt="Settings Screen"
+	title="A cute kitten" width="150" height="300" />
+
+
 ## WHAT
 Anycard allows you to combine technology with magic. you scan the back of your participants card and can make their card before  you. You can take pictures and present it to your
 
