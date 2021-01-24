@@ -12,4 +12,6 @@ struct PlayingCard {
     let rank: String
     let suit: String
     let image: String
+    let rankIndex: Int
+    let suitIndex: Int
 }

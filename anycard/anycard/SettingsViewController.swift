@@ -17,20 +17,28 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var delegate: UpdateCardDelegate? = nil
     var imageName = ""
     var modelController: ModelController!
+    @IBOutlet weak var selectedCardLabel: UILabel!
     @IBOutlet weak var cardImage: UIImageView!
-    @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var rankPicker: UIPickerView!
-    private let rankList = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-
-        
-    @IBOutlet weak var suitLabel: UILabel!
     @IBOutlet weak var suitPicker: UIPickerView!
-    private let suitList = ["Heart", "Spade", "Diamond", "Club"]
+    
+    private let rankList = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+    private let suitList = ["Spade", "Heart", "Diamond", "Club"]
+
+    private var selectedRank : String = ""
+    private var selectedSuit : String = ""
+    private var rankIndex: Int = 0
+    private var suitIndex: Int = 0
+        
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        rankLabel.text = modelController.card.rank
-        suitLabel.text = modelController.card.suit
+        selectedRank = modelController.card.rank
+        selectedSuit = modelController.card.suit
+        rankIndex = modelController.card.rankIndex
+        suitIndex = modelController.card.suitIndex
+        
+        selectedCardLabel.text = selectedRank + " of " + selectedSuit + "s"
         
         cardImage.image = UIImage(named: modelController.card.image)
         self.rankPicker.delegate = self as UIPickerViewDelegate
@@ -38,13 +46,21 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         self.suitPicker.delegate = self as UIPickerViewDelegate
         self.suitPicker.dataSource = self as UIPickerViewDataSource
+        
+        self.suitPicker.selectRow(suitIndex, inComponent:0, animated:true)
+        self.rankPicker.selectRow(rankIndex, inComponent:0, animated:true)
     }
     
     func updateCardImage() {
-        self.imageName = rankLabel.text! + suitLabel.text!.prefix(1)
-        let newCard = PlayingCard(rank: rankLabel.text!, suit: suitLabel.text!, image: imageName)
+        selectedCardLabel.text = selectedRank + " of " + selectedSuit + "s"
+        self.imageName = selectedRank + selectedSuit.prefix(1)
+        let newCard = PlayingCard(rank: selectedRank, suit: selectedSuit, image: imageName, rankIndex: rankIndex, suitIndex: suitIndex)
         modelController.card = newCard
         cardImage.image = UIImage(named: modelController.card.image)
+    }
+    
+    @IBAction func doneClick(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func handleSave(_ sender: UIButton) {
@@ -71,17 +87,21 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 1 {
+            rankIndex = row
             return rankList[row]
         } else {
+            suitIndex = row
             return suitList[row]
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
-            rankLabel.text = rankList[row]
+            rankIndex = row
+            selectedRank = rankList[row]
         } else {
-            suitLabel.text = suitList[row]
+            suitIndex = row
+            selectedSuit = suitList[row]
         }
         updateCardImage()
     }

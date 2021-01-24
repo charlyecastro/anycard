@@ -17,8 +17,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, UpdateCardDelegate {
     var card: PlayingCard!
     var plane: SCNPlane!
     
+    var soundPlayer: SoundManager = SoundManager()
+    
     @IBAction func handleSnap(_ sender: UIButton) {
         UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
+        soundPlayer.play()
     }
     
     func updateCard(cardImage: String) {
